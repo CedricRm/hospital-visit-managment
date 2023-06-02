@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"'http://hibernate.sourceforge.net/hibernate-mappgin-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="bean.Visiter" table="VISITER">
+		<composite-id name="primaryKey" class="bean.bean.VisiterPK">
+			<key-property name="codepat" column="codepat" />
+			<key-property name="codemed" column="codemed" />
+		</composite-id>
+		
+		<many-to-one name="codepat" column="codepat" class="Patient" />
+		<many-to-one name="codemed" column="codemed" class="Medecin" />
+		<property name="Adresse" column="Adresse"></property>
+	</class>
+</hibernate-mapping>
